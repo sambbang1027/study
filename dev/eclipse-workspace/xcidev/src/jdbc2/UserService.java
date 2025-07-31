@@ -1,0 +1,92 @@
+package jdbc2;
+
+import java.sql.ResultSet;
+import java.util.List;
+
+public class UserService {
+	private static final UserDAO userDAO = UserDAO.getInstance();
+
+	private static UserService instance;
+	private UserService() {
+		
+	}
+	
+	public static UserService getInstance() {
+		if(instance == null) {
+			instance = new UserService();
+		}
+			return instance;
+	}
+
+	public Boolean signUp(User user) {
+		try {
+			userDAO.signUp(user);
+			return true;
+		}catch(Exception e) {
+			System.out.println("$$ 회원가입 실패 : " + e.getMessage());
+			return false;
+		}
+		
+	}
+
+	public User login(String username, String password) {
+		try {
+			return userDAO.getUser(username, password);
+		}catch(Exception e) {
+			System.out.println("$$ 로그인 실패 : " + e.getMessage());
+
+			return null;
+		}
+	}
+
+	public void updatePassword(String newPassword, String username) throws Exception{ // 반드시 호출한 쪽에서 예외처리 해야줘야함 
+		try {
+			if(newPassword.length() < 3)throw new RuntimeException(MessageUtil.get("error.user.password"));
+			int result =  userDAO.updatePassword(newPassword, username);
+			if(result == 1) {
+				return ;
+			}else {
+				throw new RuntimeException(MessageUtil.get("error.user.password2"));
+			}
+		}catch(Exception e) {
+			System.out.println("$$ 비밀번호 수정 실패 : " + e.getMessage());
+			throw e; //사용자에게도 오류메세지를 전달하려면 메서드에 throws 처리 해줘야한다.
+			
+		}
+		
+	}
+
+	public void deleteUser(String username) throws Exception{
+		try {
+			int result = userDAO.deleteUser(username);
+			if(result == 1 ) {
+				return;
+			}else {
+				throw new RuntimeException(MessageUtil.get("error.user.delete"));
+			}
+		}catch(Exception e) {
+			System.out.println("$$ 회원 탈퇴 실패 :" +e.getMessage());
+			throw e;
+		}
+		
+	}
+
+	public void searchUser(String username) throws Exception {
+		try {
+			User user = userDAO.searchUser(username);
+			if(user != null) {
+				System.out.println("아이디 : "+ user.getUsername());
+				System.out.println("이름 : "+ user.getName());
+				System.out.println("이메일 : "+ user.getEmail());
+				System.out.println("생일년도 : "+ user.getBirthYear());					
+			}else {
+				throw new RuntimeException(MessageUtil.get("error.user.notFound"));
+			}
+			
+		}catch(Exception e) {
+			System.out.println("$$ 회원 검색 실패 : "+ e.getMessage());
+			throw e;
+		}
+	}
+	
+}

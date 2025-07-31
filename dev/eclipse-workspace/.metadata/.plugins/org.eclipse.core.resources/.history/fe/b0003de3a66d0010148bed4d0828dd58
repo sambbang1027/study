@@ -1,0 +1,15 @@
+package oop11;
+
+public interface TV {
+	public default void setSpeaker(Speaker speaker) {}
+	//설계가 바뀌었을때 모든 부분을 변경하지 않고 default 메서드로 변경을 해결
+
+	public abstract void powerOn();
+	public abstract void powerOff();
+	public abstract void soundUp();
+	public abstract void soundDown();
+	public abstract void channelUp();
+	public abstract void channelDown();
+
+
+}

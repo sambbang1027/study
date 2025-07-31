@@ -1,0 +1,19 @@
+package oop11;
+
+public class BossSpeaker implements Speaker{
+
+	public BossSpeaker(){
+		System.out.println("BossSpeaker : 제품이 설정됨");
+	}
+
+	@Override
+	public void soundUp() {
+		System.out.println("BossSpeaker : 소리를 키웁니다.");
+	}
+
+	@Override
+	public void soundDown() {
+		System.out.println("BossSpeaker : 소리를 내립니다.");
+	}
+
+}

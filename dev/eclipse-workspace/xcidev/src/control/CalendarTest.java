@@ -1,0 +1,20 @@
+package control;
+
+import java.util.Calendar;
+
+public class CalendarTest {
+	public static void main(String[] args) {
+		Calendar c = Calendar.getInstance();
+		c.set(2025, 10-1, 27); // 월은 1월 :0 이므로 원하는 달에서 1빼야 함
+		int dayofweek = c.get(Calendar.DAY_OF_WEEK);
+		System.out.println(dayofweek);
+		//일 :0 ~ 토 : 6
+		
+		
+		// 그 달의 마지막날을 알 수 있음
+		int end = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+		System.out.println(end);
+		
+	}
+
+}
