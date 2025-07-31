@@ -4,9 +4,6 @@ import java.util.*;
 //N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램
 // int n ; 
 // arry[n];
-// for(n){
-// arry 에 값넣
-//}
 // int max;
 // int min;
 //
