@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="59DD32C3-8670-0536-8394-A917BB17661C" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JOBS">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JOBS</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[jobs table with job titles and salary ranges. Contains 19 rows.
+References with employees and job_history table.]]></commentInRDBMS>
+<ownerDesignName>Relational_@</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21DBDBC4-721A-4E23-C8A9-AAB88F62D915" name="JOB_ID_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JOB_ID_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<pk>true</pk>
+<indexExpression>JOB_ID</indexExpression>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="1D348D07-8F6F-4853-741D-3B8D13ACC784" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JOB_ID_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JOB_ID_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>JOB_ID</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="JOB_TITLE_NN" directorySegmentName="seg_0" id="14F4844C-9703-09E2-ED19-E1092216BE84">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JOB_TITLE_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["JOB_TITLE" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

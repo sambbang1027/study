@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9C316362-0D85-3B0F-1793-0653C988FC23" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="XCI_MEMBERS">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>XCI_MEMBERS</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2BA632C9-7962-43F2-B778-FC9112A92156" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="XCI_MEMBERS_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>SYS_C008305</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<pk>true</pk>
+<indexExpression>USERNAME</indexExpression>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="SYS_C008301" directorySegmentName="seg_0" id="56D0B4C6-B173-4C34-06AD-58B34E9FF562">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>SYS_C008301</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["PASSWORD" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="SYS_C008302" directorySegmentName="seg_0" id="E96F4D2F-48E7-1E30-B203-5C7B8C2294B4">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>SYS_C008302</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["NAME" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="SYS_C008303" directorySegmentName="seg_0" id="DEE9AD36-D471-1D3A-CF2E-C4CAB763A2E5">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>SYS_C008303</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["EMAIL" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="SYS_C008304" directorySegmentName="seg_0" id="67590F9C-F838-D3D6-5EC5-A7724D04B6E5">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>SYS_C008304</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["BIRTH" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

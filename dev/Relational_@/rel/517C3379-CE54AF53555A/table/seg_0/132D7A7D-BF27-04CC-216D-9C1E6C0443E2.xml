@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="132D7A7D-BF27-04CC-216D-9C1E6C0443E2" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JOB_HISTORY">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JOB_HISTORY</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[Table that stores job history of the employees. If an employee 
+changes departments within the job or changes jobs within the department, 
+new rows get inserted into this table with old job information of the 
+employee. Contains a complex primary key: employee_id+start_date.
+Contains 25 rows. References with jobs, employees, and departments tables.]]></commentInRDBMS>
+<ownerDesignName>Relational_@</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="578930C7-8EA1-01FC-EB64-ED0C70D31C41" name="JHIST_EMP_ID_ST_DATE_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_EMP_ID_ST_DATE_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<pk>true</pk>
+<indexExpression>EMPLOYEE_ID,START_DATE</indexExpression>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="00753356-5DC1-C910-62A8-7D6B2CA9D8C1" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JHIST_DEPARTMENT_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_DEPARTMENT_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>DEPARTMENT_ID</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="9C314391-F654-D910-4005-356EBB234F5C" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JHIST_EMPLOYEE_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_EMPLOYEE_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>EMPLOYEE_ID</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="0B67623C-3992-287E-37AD-C9B5D5AD1295" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JHIST_EMP_ID_ST_DATE_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_EMP_ID_ST_DATE_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>EMPLOYEE_ID, START_DATE</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="A1D29BB2-03A8-9CD3-EB6A-47E605520E9D" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="JHIST_JOB_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_JOB_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>JOB_ID</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="F1BF3830-59AC-832B-84C2-C7EEDFB9B732" name="JHIST_DEPT_FK">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="6BE67ED9-F68F-D08B-C1B5-1A05291B328E" name="JHIST_EMP_FK">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="4B146EB7-C4C6-A45C-A81B-EEF8195B2168" name="JHIST_JOB_FK">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="JHIST_DATE_INTERVAL" directorySegmentName="seg_0" id="9070ADAF-5CF4-2FDC-3E6E-E2BB1179BD8A">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_DATE_INTERVAL</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA[end_date > start_date]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="JHIST_EMPLOYEE_NN" directorySegmentName="seg_0" id="F8C8FCA6-58C3-D578-2169-ABF66F5978BB">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_EMPLOYEE_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["EMPLOYEE_ID" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="JHIST_END_DATE_NN" directorySegmentName="seg_0" id="0FC698E2-974D-CF10-8E84-C03D8906A578">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_END_DATE_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["END_DATE" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="JHIST_JOB_NN" directorySegmentName="seg_0" id="870D2F03-6BA9-E76B-734E-8B36BDE74AA1">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_JOB_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["JOB_ID" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="JHIST_START_DATE_NN" directorySegmentName="seg_0" id="0667161F-49CB-C63B-89F4-AB761FD5390F">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>JHIST_START_DATE_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["START_DATE" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

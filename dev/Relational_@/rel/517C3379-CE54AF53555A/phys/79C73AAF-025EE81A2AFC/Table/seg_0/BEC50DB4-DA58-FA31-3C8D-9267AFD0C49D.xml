@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="LOCATIONS" directorySegmentName="seg_0" id="BEC50DB4-DA58-FA31-3C8D-9267AFD0C49D">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>33BC7E56-F928-D44D-2586-57EFE265379C</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_CITY_IX" id="271EEB31-8E52-F789-9A2F-1A8C425F75D0">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_ID_PK" id="62417504-A621-9925-8291-51AC24C6D704">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_STATE_PROVINCE_IX" id="826D3557-D397-4E5E-041E-42D1B6E1E8F4">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="LOC_COUNTRY_IX" id="AF98644C-05F6-8506-F45D-CC78EA1C3862">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="LOC_C_ID_FK" id="5ADFB4DB-67E3-5ED8-B1C3-56132B43D540">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LOC_ID_PK" id="30C65ADC-6427-E59A-0CA3-17D1B0EDCBCA">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<existingIndex>62417504-A621-9925-8291-51AC24C6D704</existingIndex>
+<indexSegment>9C88C1BF-ECA9-42DF-6689-58075213E610</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="LOC_CITY_NN" id="CB94CF02-9F2C-D15D-CDF3-8BBBF1800227">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev12c>

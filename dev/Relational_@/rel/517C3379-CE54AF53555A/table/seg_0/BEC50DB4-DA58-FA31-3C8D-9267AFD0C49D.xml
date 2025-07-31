@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEC50DB4-DA58-FA31-3C8D-9267AFD0C49D" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="LOCATIONS">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOCATIONS</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="30C65ADC-6427-E59A-0CA3-17D1B0EDCBCA" name="LOC_ID_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_ID_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<pk>true</pk>
+<indexExpression>LOCATION_ID</indexExpression>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="271EEB31-8E52-F789-9A2F-1A8C425F75D0" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="LOC_CITY_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_CITY_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>CITY</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="AF98644C-05F6-8506-F45D-CC78EA1C3862" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="LOC_COUNTRY_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_COUNTRY_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>COUNTRY_ID</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="62417504-A621-9925-8291-51AC24C6D704" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="LOC_ID_PK">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_ID_PK</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>LOCATION_ID</indexExpression>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="826D3557-D397-4E5E-041E-42D1B6E1E8F4" schemaObject="B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A" name="LOC_STATE_PROVINCE_IX">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_STATE_PROVINCE_IX</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexExpression>STATE_PROVINCE</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="5ADFB4DB-67E3-5ED8-B1C3-56132B43D540" name="LOC_C_ID_FK">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="LOC_CITY_NN" directorySegmentName="seg_0" id="CB94CF02-9F2C-D15D-CDF3-8BBBF1800227">
+<sourceConnName>ace</sourceConnName>
+<sourceObjSchema>ACE</sourceObjSchema>
+<sourceObjName>LOC_CITY_NN</sourceObjName>
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<rule><![CDATA["CITY" IS NOT NULL]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
