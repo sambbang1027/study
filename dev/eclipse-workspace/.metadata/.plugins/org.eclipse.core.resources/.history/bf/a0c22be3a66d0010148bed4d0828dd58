@@ -1,0 +1,32 @@
+package sec02_createandstartthread.EX03_CreatedAndStartThread_M2C1;
+
+class SMIFileRunnable implements Runnable{
+	@Override
+	public void run() {
+		// 자막 번호 하나~다섯
+		String[] strArray = {"하나","둘","셋","넷","다섯"};
+		try {Thread.sleep(10);}catch(InterruptedException e) {}
+		//자막 번호 출력
+		for (String element : strArray) {
+			System.out.println(" - (자막 번호) "+ element);
+			try {Thread.sleep(200);}catch(InterruptedException e) {}
+		}
+	}
+}
+
+public class CreatedAndStartThread_M2C1 {
+	public static void main(String[] args) {
+		Runnable smiFileRunnable = new SMIFileRunnable();
+
+		Thread thread = new Thread(smiFileRunnable);
+
+		thread.start();
+
+		int[] intArray = {1, 2, 3, 4, 5};
+
+		for (int element : intArray) {
+			System.out.print("(비디오 프레임)"+ element);
+			try {Thread.sleep(200);}catch(InterruptedException e) {}
+		}
+	}
+}

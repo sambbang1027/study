@@ -1,0 +1,17 @@
+package opp6;
+
+public class Single {
+	
+	//Lazy Initialization 지연 초기화 
+	// 인스턴스가 안쓰일 수 있기 때문에 필요할 때만 만든다는 장
+	private static Single single;
+	private Single () {}
+	public static Single getInstance() {
+		if(single == null) {
+			// 최초 실행시 인스턴스생성 
+			// 아직 인스턴스가 생성되지 않았다면 처음 초기화 
+			single = new Single();
+		}
+		return single;
+	}
+}

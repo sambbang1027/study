@@ -1,0 +1,21 @@
+package sec01_operator_1.EX03_ShifOperator;
+
+public class ShifOperator {
+	public static void main(String[] args) {
+		System.out.println(3 << 1); // 011 << 110
+		System.out.println(-3 << 1); //101
+		System.out.println(3 << 2);
+		System.out.println(-3 << 2);
+		System.out.println();
+
+		System.out.println(5 >>1);
+		System.out.println(-5 >> 1);
+		System.out.println(5 >> 2);
+		System.out.println(-5 >> 2);
+		System.out.println();
+
+		System.out.println(3 >>> 1);
+		System.out.println(-3 >>> 31);
+	}
+
+}

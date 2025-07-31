@@ -1,0 +1,21 @@
+package stringclass;
+
+public class StringTest1 {
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		String str = new String("문자열");
+
+		String str2 = "";
+		for(int i =1; i<=3; i++) {
+			str2 += "ABC";
+			// for문을 돌릴때 String 은 메모리에 계속해서 새롭게 생성된다
+			// 즉, i = 1 -> ABC 생성 ,i = 2 -> ABCABC 생성
+			//( 기존 ABC 뒤에 붙는게 아니라 새로운 ABCABC 가 생성됨, 기존 ABC도 남아있고 새로운 ABCABC도 존재함)
+			// 해당 for문을 빠져나가야만 필요하지 않는 메모리들이 GC에 의해 삭제된다 .
+			// 따라서 , 문자열이 메모리 로스가 가장 큼
+
+		}
+		System.out.println(str2);
+	}
+
+}

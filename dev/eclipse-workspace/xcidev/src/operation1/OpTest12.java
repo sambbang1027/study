@@ -1,0 +1,28 @@
+package operation1;
+
+import java.util.Scanner;
+
+public class OpTest12 {
+	public static void main(String[] args) {
+		// Q. Scanner를 사용하여 정수 입력 
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("a : ");
+		int a = sc.nextInt();
+		System.out.println(a%2 ==0 ? a+"은(는) 짝수입니다." :a+ "은(는) 홀수입니다.");
+		//나머지비트 사용할때 부호도 따라가는것을 주의해야함 
+		
+//		int b = -5; 
+//		System.out.println(a%2 ==1 ? a+"는 홀수입니다." :a +"는 짝수입니다.");
+//		나머지가 -1 이 나오고 1 이 아니기때문에 false 처리가 됨 
+//		음수값을 나머지 연산 적용시 반드시 절대값을 먼저 취해야함 
+//		System.out.println(Math.abs(b)%2 == 1 ?  a+"는 홀수입니다." :a +"는 짝수입니다.");
+		
+		
+		sc.close();
+		System.out.println("종료");
+	
+		
+	}
+}

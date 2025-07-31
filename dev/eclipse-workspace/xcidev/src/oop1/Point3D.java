@@ -1,0 +1,20 @@
+package oop1;
+
+import lombok.Getter;
+
+@Getter
+public class Point3D extends Point2D {
+	private int z;
+
+
+	public void setZ(int z) {
+		this.z = z; // this 는 자신을 의미 
+	}
+	
+	
+	public void print() {
+		super.print(); 
+		System.out.println("z = " + this.getZ());
+	}
+	
+}

@@ -1,0 +1,57 @@
+package io;
+import java.io.File;
+import java.io.IOException;
+
+public class FileTest1 {
+	public static void main(String[] args) throws IOException {
+		File fileDir = new File("/Users/sammy/dev/file/test");
+		if(!fileDir.exists()) {
+			fileDir.mkdirs();
+		}
+		for(int i = 0; i< 5; i++) {
+			int num = (int)(Math.random()*9999+1);
+			String strNum = String.valueOf(num);
+			
+			if(strNum.length() == 1) {
+				strNum = "000"+ strNum;
+				System.out.println(strNum);
+			}else if (strNum.length() == 2) {
+				strNum = "00"+strNum;
+			}else if (strNum.length() == 3) {
+				strNum = "0"+strNum;
+			}
+			
+			File newFile = new File("/Users/sammy/dev/file/test/"+strNum+".txt");
+			if(!newFile.exists()) {
+				newFile.createNewFile();
+				System.out.println("생성된 파일 : "+strNum+".txt");
+			}
+		}
+		System.out.println("파일 생성이 완료되었습니다.");
+	
+		File fileDir2 = new File("/Users/sammy/dev/file/test2");
+		if(!fileDir2.exists()) {
+			fileDir2.mkdir();
+		}
+		
+		
+		File[] fnames = fileDir.listFiles();
+		String[] fileName ;
+		for(File fname : fnames) {
+			System.out.println(fname.isDirectory()? "폴더 :" : "파일 :" + fname.getName());
+			fileName = fname.getName().split("\\.");
+			File newFile2 = new File("/Users/sammy/dev/file/test2/"+fileName[0]+".txt");
+			newFile2.createNewFile();
+		}
+		System.out.println("파일을 복제하였습니다.");
+		
+		
+		File[] fnames2 = fileDir2.listFiles();
+		String[] fileName2;
+		for(File fname : fnames2) {
+			fileName2 = fname.getName().split("\\.");
+			System.out.println(fileName2[0]);
+		}
+	}
+
+}
