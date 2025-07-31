@@ -1,0 +1,41 @@
+<script>
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
+    alert( this.step );
+  }
+};
+// 연달아 호출해야함 
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1
+
+// -------------------------------
+// 위의 식을 ladder.up().up().down().showStep(); // 1 이렇게 바꾸려면 ? 
+
+let ladder2 = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+}
+// 호출 할때마다 자기 자신을 리턴하면 연달아서 체이닝 할 수 있음
+ladder.up().up().down().up().down().showStep(); // 1
+
+</script>
