@@ -1,0 +1,33 @@
+package sec02_string.EX03_SharingStringObject;
+
+public class SharingStringObject {
+	public static void main(String[] args) {
+		String str1 = new String("안녕");
+		String str2 = "안녕";
+		String str3 = "안녕";
+		String str4 = new String("안녕");
+		
+		//스택 메모리값 비교
+		
+		System.out.println(str1 == str2); 
+		//str1은 새롭게 객체를 생성하고 str2는 이미 힙메모리에 리터럴로 생성된 동일 문자열을 공유하므로 false
+		System.out.println(str2 == str3);
+		//둘다 기존에 있는 문자열을 공유하므로 true
+		System.out.println(str3 == str4);
+		// str4 new 로 새롭게 객체를 생성해서 서로 다른 인스턴스를 가리킴 -> false
+		System.out.println(str4 == str1);
+		// 둘 다 새로운 객체로 생성했었기 때문에 false
+		System.out.println("-----------------");
+		String a = new String("hi");
+		String b = new String("hi");
+		System.out.println(a == b); // 서로 다른 객체이므로 
+		System.out.println(a.equals(b)); // 객체 안의 값을 비교하기 때문에
+		
+		String a2 = ("hi");
+		String b2 = ("hi");
+		System.out.println(a2 == b2);
+		System.out.println(a2.equals(a));
+		
+		
+	}
+}

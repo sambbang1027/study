@@ -1,0 +1,37 @@
+package exception;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class ExceptionTest5 {
+	public static void main(String[] args) {
+		Random random = new Random();
+		int n = random.nextInt(99)+1;
+		int you = 0;
+		
+		try(Scanner sc = new Scanner(System.in)){
+			while(true) {
+				System.out.print("1부터 99사이의 정수를 입력하세요 > ");
+				if(!sc.hasNextInt()) { // 입력이 잘못되었을 때 
+					System.out.println("값이 잘못 입력되었습니다.");
+					sc.nextLine(); 
+					continue;
+				}
+				you = sc.nextInt();
+				sc.nextLine();
+				// 값을 여러개 입력했을 때 첫번째 값만 받고 나머지는 날려버림
+				if(!(1<= you && you <= 99)) {
+					System.out.println("값의 범위가 틀렸습니다. 1<= ㅌ <= 99 사이의 정수로 입력하세요.");
+					
+				}else if(you != n) {
+					System.out.println("입력값은 : "+ you +"입니다.");
+				}else {
+					System.out.println("맞았습니다. 컴퓨터가 생각한 값은 "+ n + "입니다");
+					break;
+				}
+				
+			}
+		}
+		System.out.println("종료");
+	}
+}

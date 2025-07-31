@@ -1,0 +1,12 @@
+package opp6;
+
+public class Single2 {
+
+	//Eager Initialization 조기 초기화
+	// 자주 쓰인다면 조기 초기화 해서 사용하면 편함
+	private static final Single2 single = new Single2(); //사용 전  미리 초기화
+	private Single2 () {}
+	public static Single2 getInstance() {
+		return single;
+	}
+}
