@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DEPARTMENTS" directorySegmentName="seg_0" id="CE6208EB-1BDD-15F8-94A1-73585B67DACB">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>33BC7E56-F928-D44D-2586-57EFE265379C</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DEPT_ID_PK" id="41459462-6FB1-C5F6-5CBF-DC257ECEA09A">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DEPT_LOCATION_IX" id="573777D3-ABC6-8481-23AB-B8A9500D5B1A">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DEPT_MGR_FK" id="565C86F6-F4FF-50A8-8959-4D8391E1BC4F">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="DEPT_LOC_FK" id="CE948C52-85B8-54F5-C6A9-40FA5F09B7C3">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DEPT_ID_PK" id="EDE15DFB-DE57-D0B1-A319-2F0D9D6F674D">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<existingIndex>41459462-6FB1-C5F6-5CBF-DC257ECEA09A</existingIndex>
+<indexSegment>9C88C1BF-ECA9-42DF-6689-58075213E610</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="DEPT_NAME_NN" id="4DBEEB95-0104-948F-A5F9-C82A6DFE5B3A">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev12c>
