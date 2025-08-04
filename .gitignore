@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Eclipse workspace
+dev/eclipse-workspace/.metadata/
+dev/**/*.markers
+dev/**/*.dat
+dev/**/*.log
+dev/**/*.tree
+dev/**/*.index
+dev/**/*.safetable
+dev/**/.DS_Store
