@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="XCI_MEMBERS" directorySegmentName="seg_0" id="9C316362-0D85-3B0F-1793-0653C988FC23">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>33BC7E56-F928-D44D-2586-57EFE265379C</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="XCI_MEMBERS_PK" id="2BA632C9-7962-43F2-B778-FC9112A92156">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+<schemaObject>B04104FC-EA7A-C5C8-5E8B-081BCCBFDA1A</schemaObject>
+<segment>9C88C1BF-ECA9-42DF-6689-58075213E610</segment>
+<tableSpace>F7F2EA41-250D-C214-B7EE-7209F3BF72D9</tableSpace>
+<indexSegment>9C88C1BF-ECA9-42DF-6689-58075213E610</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="SYS_C008301" id="56D0B4C6-B173-4C34-06AD-58B34E9FF562">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+<TableCheckConstraint name="SYS_C008304" id="67590F9C-F838-D3D6-5EC5-A7724D04B6E5">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+<TableCheckConstraint name="SYS_C008303" id="DEE9AD36-D471-1D3A-CF2E-C4CAB763A2E5">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+<TableCheckConstraint name="SYS_C008302" id="E96F4D2F-48E7-1E30-B203-5C7B8C2294B4">
+<createdBy>sammy</createdBy>
+<createdTime>2025-06-25 02:29:11 UTC</createdTime>
+<ownerDesignName>Relational_@</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev12c>
