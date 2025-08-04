@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="/Users/sammy/sammyStudy/dev/mylib/commons-codec-1.18.0/commons-codec-1.18.0-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/sammy/sammyStudy/dev/mylib/myDice.jar"/>
 	<classpathentry kind="lib" path="/Users/sammy/sammyStudy/dev/mylib/ojdbc11.jar"/>
+	<classpathentry kind="lib" path="/Users/sammy/sammyStudy/dev/lombok.jar"/>
+	<classpathentry kind="lib" path="/Users/sammy/sammyStudy/dev/mylib/commons-codec-1.18.0/commons-codec-1.18.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

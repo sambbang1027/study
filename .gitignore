@@ -1,5 +1,6 @@
 # macOS
 .DS_Store
+dev/.DS_Store
 
 # Eclipse workspace
 dev/eclipse-workspace/.metadata/
