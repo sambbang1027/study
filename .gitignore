@@ -11,3 +11,4 @@ dev/**/*.tree
 dev/**/*.index
 dev/**/*.safetable
 dev/**/.DS_Store
+**/bin/
