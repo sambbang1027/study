@@ -14,7 +14,7 @@ public class Day11_FindThirdNumber {
 			for(int i = 0; i < 10; i++) {
 				ary[i] = sc.nextInt();
 			}
-			
+			// 내림차순 하는 방법 
 			Arrays.sort(ary, Collections.reverseOrder());
 			
 			System.out.println(ary[2]);
