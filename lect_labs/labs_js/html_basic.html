@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+        /* 요소 단위로 스타일 재정의 */
+        h1 { 
+            color: coral;
+            font-size: 50px;
+            font-family: '궁서체';
+        }
+        /* 요소선택자(selector) {속성(property) : 값(value)} */
+
+        /* .class */
+        .title {
+            color :darkorange;
+            font-size: 60px;
+        }
+        /* #id */
+        #title{
+            color: tomato;
+            font-size: 30px;
+        }
+        /* 속성 선택자 */
+            li[title] {color: orange;} /*속성 존재 여부 확인*/
+            li[title='할인'] {color: red;} /* 속성 중 할인이 있으면 걔만 빨강으로  */
+            li[title~='무료배송']::after {content: ' [무료배송]';} /* 각각의 값에 무료 배송이라고 적혀있다면 콘텐트 옆에 [무료배송]이라고 띄우기 */
+            li[title~='품절'] {color: gray;}
+    </style>
+</head>
+<body>
+    <h1 id="title">HTML Basic</h1>
+    <h1>HTML Basic</h1>
+    <h1 class="title">HTML Basic</h1>
+    <h1>HTML Basic</h1>
+    <h1 class="title">HTML Basic</h1>
+<!-- 요소 element : tag content -->
+    <font face="궁서체" size="7" color="green">HTML Basic</font>
+    <!-- attribute속성을 이용하여 부가정보 표현 -->
+    <button type="button" onclick="changeContent()">내용 바꾸기</button>
+    <ol>
+        <li title="">사과</li>
+        <li title="할인 품절">배</li>
+        <li title="할인 무료배송">바나나</li>
+        <li title="무료배송 품절">수박</li>
+        <li title="hot 무료배송">복숭아</li>
+        <li><a href="#" target="_blank" data-url="">외부 쇼핑</a></li>
+    </ol>
+    <script>
+        // 메모리에 생성된 데이터를 변경할 때 자바스크립트를 사용하는 것이다 .
+
+        //이벤트 핸들러 (= 콜백함수)
+        function changeContent() { // 함수는 코드에 대한 변수이다.
+            document.getElementById('title').innerText = 'HTML 기본';
+        }
+
+        $("li[title~='품절']").on('click', function() {
+            alert('품절입니다.');
+        });
+
+
+    </script>
+</body>
+</html>

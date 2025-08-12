@@ -1,6 +1,6 @@
 package app.labs.ex01;
 
-public class PassengerImpl implements Passenger {
+public abstract class PassengerImpl implements Passenger {
 
 	private int regNumber;
 	private String name;
