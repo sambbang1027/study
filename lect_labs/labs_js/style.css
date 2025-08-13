@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* @import url("style.css");  이렇게 css 파일내에서 import 가능하다 
+가장 main base 가 되는 css를 설정해주는 방식으로 사용하면 된다. */
+
+body {
+    background-color: rgb(196, 206, 217);
+}
+
