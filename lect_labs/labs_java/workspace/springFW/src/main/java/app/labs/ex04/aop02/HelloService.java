@@ -1,5 +1,8 @@
-package app.labs.ex04.aop01;
+package app.labs.ex04.aop02;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class HelloService implements IHelloService {
 
 	@Override
