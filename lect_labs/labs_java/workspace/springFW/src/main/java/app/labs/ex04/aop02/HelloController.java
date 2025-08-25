@@ -17,7 +17,6 @@ public class HelloController {
 	public void hello(String name) {
 
 		System.out.println("HelloController : " + this.helloService.sayHello(name));
-		
 	}
 	
 	public void goodBye(String name) {
