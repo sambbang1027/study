@@ -11,7 +11,7 @@ n개 정수로 이어진 수열과
 -7 -3 -2 5 8
  * */
 
-public class Day19_Backtracking {
+public class Day19_Backtracking_5 {
 	
 	static int n , s;
 	static int[] ary;

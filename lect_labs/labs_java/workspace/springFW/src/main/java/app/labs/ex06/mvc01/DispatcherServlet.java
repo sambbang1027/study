@@ -1,5 +1,6 @@
 package app.labs.ex06.mvc01;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import app.labs.ex06.mvc01.controller.CommandHandler;
+import app.labs.ex06.mvc01.controller.NullHandler;
 
 
 @WebServlet("/DispatcherServlet")
@@ -66,12 +68,57 @@ public class DispatcherServlet extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processServlet(request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		processServlet(request, response);
 	}
 
+	//url 을 호출해서 갖고 있는 객체를 꺼내쓴다. 
+	private void processServlet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8"); // 인코딩설정
+
+		// 요청 URI를 반환
+		String command = request.getRequestURI();
+
+		// URI에서 컨텍스트 이름을 제거한다.
+		if (command.indexOf(request.getContextPath()) == 0) {
+			command = command.substring(request.getContextPath().length());
+		}
+
+		// URI를 이용해서 맵으로부터 커맨드핸들러 객체를 찾는다.
+		CommandHandler handler = commandHandlerMap.get(command);
+		if (handler == null) {
+			handler = new NullHandler();
+		}
+
+		String viewPage = null;
+		try {
+			// process()는 명령을 처리하고 뷰페이지를 반환한다.
+			viewPage = handler.process(request, response);
+			if ((viewPage != null) && (viewPage.indexOf("redirect:") == 0)) {
+				// 뷰 이름 앞에 redirect:가 붙으면 sendRedirect 한다.
+				viewPage = viewPage.substring(9);
+				response.sendRedirect(request.getContextPath() + viewPage);
+				return;
+			}
+		} catch (Throwable e) {
+			throw new ServletException(e);
+		}
+
+		// 뷰로 포워드 시킨다.
+		if (viewPage != null) {
+			viewPage = "/WEB-INF/views/mvc01/" + viewPage;
+		} else {
+			viewPage = "index.jsp";
+		}
+		RequestDispatcher disp = request.getRequestDispatcher(viewPage);
+		disp.forward(request, response);
+
+	}
+	
 }

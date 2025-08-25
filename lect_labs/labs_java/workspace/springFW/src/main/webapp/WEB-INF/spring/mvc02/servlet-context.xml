@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+			<!--  MVC셋팅을 하나하나 할 수 없기때문에 모든 컴포넌트들에 기본 설정을 사용한다고 셋팅 해주는 것   -->
+		<annotation-driven /> 
+		
+		<!-- get 경로 매핑 :  WEB-INF는 외부에서 접근을 허용하지 않는다. 따라서 url 이 넘어오면 이 폴더에서 찾아라  -->
+		<resources mapping="/js/**" location="/WEB-INF/assets/js/" />
+    	<resources mapping="/css/**" location="/WEB-INF/assets/css/" />
+
+		<!-- View Resolver 셋팅 :  앞뒤에 경로와 확장자를 붙여 실제 파일이 존재하는지 확인하고 이것을 dispatcher Servlet에 보내준다. -->
+		<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		        <beans:property name="prefix" value="/WEB-INF/views/mvc02/" />
+		        <beans:property name="suffix" value=".jsp" />
+	   </beans:bean>
+	   
+	   <!-- 인터 셉터  -->
+	   <interceptors>
+        <interceptor>
+            <mapping path="/hr/**"/>
+            <exclude-mapping path="/hr/insert"/>
+            <beans:bean class="app.labs.ex06.mvc02.PageViewLogInterceptor"/>
+        </interceptor>
+    </interceptors>
+	   
+
+		<!-- 적절한 핸들러를 찾아서 원하는 확장로 convert해서 보낸다. convert 도구로 잭슨을 사용  -->
+		<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	        <beans:property name="messageConverters">
+	            <beans:list>
+	                <beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+	                    <beans:property name="supportedMediaTypes">
+	                        <beans:list>
+	                            <!-- beans:value>text/html;charset=UTF-8</beans:value -->
+	                            <beans:value>application/json;charset=UTF-8</beans:value>
+	                        </beans:list>
+	                    </beans:property>
+	                </beans:bean>
+	            </beans:list>
+	        </beans:property>
+	    </beans:bean>
+	    
+	    <context:component-scan base-package="app.labs.ex06.mvc02"/>
+	    
+ </beans:beans>
