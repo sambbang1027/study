@@ -25,7 +25,7 @@ schemaLocation ->  태그들에 대한 정의 저장되어있는 곳
         	<property name="dataSource" ref="dataSource"/>
     	</bean>
 
-		<context:component-scan base-package="app.labs.ex07.fileupload"/>
+		<context:component-scan base-package="app.labs.ex06.fileupload"/>
 		
 		<!-- 트랜잭션 부분을 대부분 젤 하단에 둔다 그만큼 가장 중요도가 낮다는 말 -->
 		<!-- 트랜잭션 사용, id 는 transactionManager 기본아이디를 줘야 동작함   -->
