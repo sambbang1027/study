@@ -14,21 +14,6 @@ top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들
 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다.
 주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다.
 문제에 나와있지 않은 명령이 주어지는 경우는 없다.
- 14
-push 1
-push 2
-top
-size
-empty
-pop
-pop
-pop
-size
-empty
-pop
-push 3
-empty
-top
  * */
 
 public class Day21_Stack {
