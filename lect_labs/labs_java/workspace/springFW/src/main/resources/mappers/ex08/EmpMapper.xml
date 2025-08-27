@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="app.labs.ex08.mybatis.hr.dao.IEmpRepository">
+ 
+ 		<select id="getEmpCount" parameterType="int" resultType="int">
+ 				SELECT COUNT(*) FROM employees
+ 				<if test="deptId != null">
+ 						WHERE department_id =#{deptId} <!-- 파라미터 명 기준  -->
+ 				</if>
+ 		</select>
+ 		
+ 		<resultMap id="empMap" type="app.labs.ex08.mybatis.hr.model.Emp">
+        <result property="employeeId" column="EMPLOYEE_ID" />
+        <result property="firstName" column="FIRST_NAME" />
+        <result property="lastName" column="LAST_NAME" />
+        <result property="email" column="EMAIL" />
+        <result property="phoneNumber" column="PHONE_NUMBER" />
+        <result property="hireDate" column="HIRE_DATE" />
+        <result property="jobId" column="JOB_ID" />
+        <result property="salary" column="SALARY" />
+        <result property="commissionPct" column="COMMISSION_PCT" />
+        <result property="managerId" column="MANAGER_ID" />
+        <result property="departmentId" column="DEPARTMENT_ID" />
+    </resultMap>
+ 		<!-- 자동으로 카멜케이스 변경이 실패할 수도 있기 때문에 칼럼 name을 프로퍼티로 다시 설정해주면 
+ 		오류 안나게 사용할 수 있다  -->
+ 		
+
+			<!-- 리턴타입이 List라면 select태그가 자동으로 List를 붙여준다. 따라서 그 내부 리턴타입만 명시하면 됨  
+				resultType에 -> 따로 model에 생성된 객체는 패키지 전체 루트를 함께 입력해야한다 
+				2. 위의 resultMap을 만들어서 칼럼을 프로퍼티로 설정해준다음에 resultType을 resultMap으로 하여 넣어주는 방법도 있다  -->
+ 		
+ 		<select id="getEmpList"  resultMap="empMap">
+ 		 <!--  <select id="getEmpList"  resultType="app.labs.ex08.mybatis.hr.model.Emp">-->
+ 					SELECT * FROM employees ORDER BY employee_id DESC
+ 		</select>
+
+ 		<select id="getEmpInfo" parameterType="int"  resultType="app.labs.ex08.mybatis.hr.model.Emp">
+		    SELECT EMPLOYEE_ID AS employeeId,
+				           FIRST_NAME  AS firstName,
+				           LAST_NAME   AS lastName,
+				           EMAIL       AS email,
+				           PHONE_NUMBER AS phoneNumber,
+				           TO_CHAR(HIRE_DATE, 'yyyy-mm-dd') AS hireDate,
+				           JOB_ID      AS jobId,
+				           SALARY      AS salary,
+				           COMMISSION_PCT AS commissionPct,
+				           MANAGER_ID  AS managerId,
+				           DEPARTMENT_ID AS departmentId
+		    FROM EMPLOYEES
+		    WHERE EMPLOYEE_ID = #{empId}
+		</select>
+
+		<insert id="insertEmp" parameterType="app.labs.ex08.mybatis.hr.model.Emp">
+						INSERT INTO employees (
+									employee_id, first_name, last_name, email, phone_number
+									, hire_date, job_id, salary, commission_pct, manager_id, department_id 
+						) VALUES  (
+									#{employeeId}, #{firstName}, #{lastName}, #{email}, #{phoneNumber}
+									, sysdate, #{jobId},#{salary}, #{commissionPct}, #{managerId}, #{departmentId}
+						)
+		</insert>
+		
+		<update id="updateEmp" parameterType="app.labs.ex08.mybatis.hr.model.Emp">
+					 UPDATE employees
+							SET first_name =#{firstName}, last_name =#{lastName}
+									, email =#{email}, salary=#{salary}
+					  WHERE employee_id =#{employeeId}
+		</update>
+
+		<!-- parameter가 두개 이상일 경우 parameterType을 따로 입력하지 않는다 
+			대신 레포지토리에 @Param을 사용해서 데이터를 명시한다  -->
+		<delete id="deleteEmp">
+					DELETE FROM employees 
+								WHERE employee_id =#{empId} 
+									  AND email =#{email}
+		</delete>
+		
+		<delete id="deleteJobHistory" >
+					DELETE FROM job_history 
+								WHERE employee_id =#{empId} 
+		</delete>
+		
+		<select  id="getAllDeptId" resultType="hashmap">
+						SELECT department_id AS "departmentId"
+									 , department_name AS "departmentName"
+						   FROM departments
+		</select>
+		
+		<select  id="getAllJobId" resultType="hashmap">
+							SELECT job_id AS "jobId" , job_title AS "jobTitle"
+							    FROM jobs
+		</select>
+
+		<select  id="getAllManagerId" resultType="hashmap">
+					SELECT DISTINCT e.manager_id AS "managerId" , e2.first_name AS "managerName"
+						FROM employees e
+						  JOIN employees e2  on e.manager_id = e2.employee_id
+				ORDER BY e.manager_id
+		</select>
+		
+ </mapper>
