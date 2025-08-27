@@ -27,7 +27,9 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             <!-- /WEB-INF/spring/mvc02/root-context.xml -->
-            /WEB-INF/spring/fileupload/root-context.xml
+           <!--  /WEB-INF/spring/fileupload/root-context.xml -->
+            classpath:/config/mybatis/root-context.xml
+            <!-- classpath: 하면 빌드에서 설정한 classpath가 자동으로 설정된다  -->
         </param-value>
     </context-param>
     
@@ -45,7 +47,9 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>
 <!--                 /WEB-INF/spring/mvc02/servlet-context.xml -->
-                 /WEB-INF/spring/fileupload/servlet-context.xml
+<!--                  /WEB-INF/spring/fileupload/servlet-context.xml-->    
+            		classpath:/config/mybatis/servlet-context.xml
+             
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup> <!-- 얘 먼저 실행해라  -->
@@ -74,6 +78,14 @@
     	<location>/WEB-INF/views/mvc02/error/runtime.jsp</location>
     </error-page>
      -->
+     
+     <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+     
     
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
