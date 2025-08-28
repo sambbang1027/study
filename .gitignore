@@ -30,3 +30,7 @@ dev/**/.DS_Store
 
 # (강추) JDK 통째로 커밋 금지
 lect_labs/labs_java/jdk-17.0.16+8/**
+
+
+# upload 폴더
+/upload/
